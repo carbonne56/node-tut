@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Node Packages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./menu.css">
+  </head>
+  <body>
+    <header>
+      <img src="./images/node_logo_white.svg" width="130" alt="node js logo">
+      <div class="menu">
+        <ul>
+          <div id="menu-item-container"><li><a class="menu-link" href="index.html">START</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="index.html#nodeStart">Introduction</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#app-structure">Program Structure</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="libs.html">PACKAGES</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="libs.html#fs">FS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#chalk">Chalk</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#yargs">Yargs</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#path">Path</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#hbs">HBS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#nodemon">Nodemon</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#mongo">Mongo DB</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#validator">Validator</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="variedSubjects.html">VARIED SUBJECTS</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="variedSubjects.html#arrowFunctions">Arrow Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#callbacks">Callback Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#default">Default Parameters</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#fetch">Fetch API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#promisses">Promises API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#chaining">Promise Chaining</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#async">Async & Wait</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#debug">Debugging</a> </li>
+
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="mongo.html">MONGO DB</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="mongo.html#setupMMongo">Setup</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#crud">CRUD</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#mongoose">Mongoose</a> </li>
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="todo.html">TODO</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="left">
+
+      </div>
+      <div class="center">
+        <h1>Node Packages</h1>
+
+        <h3 id="fs"><a target="_blank" href="https://nodejs.org/api/fs.html">FS</a></h3>
+
+        <div class="grid5050">
+          <div class="">
+            <p>To <b>write</b> a JSON file using <b>fs</b> </p>
+            <p>First we have to convert the object to string with the method <u>JSON.stringify</u>,
+               and then call the <u>fs.writeFileSync</u> method and pass it <u>2 parameters</u>, the name of the file and the data we want to write to the file.<br>
+            The file will by default be saved to the project folder. </p>
+          </div>
+          <div class="">
+            <pre>const fs = require('fs')
+
+  const book = {
+    title: 'Memorial do convento',
+    author: 'José Saramago'
+  }
+
+  const bookJSON = JSON.stringify(book)
+  fs.writeFileSync('book.json', bookJSON);
+            </pre>
+          </div>
+
+          <!-- row -2 -->
+
+          <div class="">
+            <p>To <b>read</b> a JSON file using <b>fs</b> </p>
+            <p>To read a file there is an <b>extra step</b>. What we get from the <u>readFileSync</u>
+              method is a <u>buffer</u>, the binary representation of the JSON data.
+              So the extra step is to convert it to string and then, use <u>JSON.parse</u> to convert back to javascript. </p>
+          </div>
+          <div class="">
+            <pre>const fs = require('fs')
+
+const dataBuffer = fs.readFileSync('book.json')
+const dataJSON = dataBuffer.toString()
+const data = JSON.parse(dataJSON)
+            </pre>
+          </div>
+
+        </div>
+
+        <h3 id="chalk"><a target="_blank" href="https://github.com/chalk/chalk#readme">Chalk</a></h3>
+        <p> <q cite="https://www.npmjs.com/package/yargs#documentation">Terminal string styling done right</q> <br>
+          <b>Chalk</b> is a tool to personalize the console messages with <u>text</u> and/or <u>background color</u>.
+        </p>
+        <div class="grid5050">
+          <div class="">
+            <p>file</p>
+            <pre>const chalk = require('chalk');
+console.log(chalk.blue('Hello world!'));
+<span class="terminalComment">// Compose multiple styles using the chainable API</span>
+console.log(chalk.blue.bgRed.bold('Hello world!'));
+            </pre>
+          </div>
+          <div class="">
+            <p>console</p>
+            <pre>$ npm install chalk
+
+<span style="color: #3498eb;">Hello world!</span>
+<span style="color: #3498eb; font-weight: bold; background-color: red;">Hello world!</span>
+
+            </pre>
+          </div>
+        </div>
+        <div class="">
+
+        </div>
+        <h3 id="yargs"> <a target="_blank" href="https://www.npmjs.com/package/yargs#documentation">Yargs</a> </h3>
+        <div class="">
+          <p>The Yargs package makes managing the command line arguments array easier to manage. </p>
+          <p>With yargs we can create commands that will manage the arguments received.</p>
+          <div class="grid5050">
+            <div class="">
+              <p>app.js</p>
+              <pre>const yargs = require('yargs')
+
+    yargs.command({
+      command: 'add',
+      describe: 'Add a new note',
+      handler: function(){
+        console.log('Adding a new note!')
+      }
+    })
+
+    yargs.command({
+      command: 'remove',
+      describe: 'Remove a note',
+      handler: function(){
+        console.log('Removing the note!')
+      }
+    })
+
+    yargs.parse()
+              </pre>
+            </div>
+            <div class="">
+              <p>console</p>
+              <pre>
+node app.js remove <span class="terminalComment"> // => Removing the note!</span>
+                        <span class="terminalComment"> {_: [ 'remove'], '$0': 'app.js'}</span>
+              </pre>
+            </div>
+          </div>
+          <div class="grid5050">
+            <div class="">
+              <p>To configure options for the commands, we can add a new property called <b>builder</b>:</p>
+              <pre>const yargs = require('yargs')
+
+    yargs.command({
+      command: 'add',
+      describe: 'Add a new note',
+      builder : {
+        title: {
+          decribe: 'Note title',
+          demandOption: true,
+          type: 'string'
+        }
+      },
+      handler: function(argv){
+        console.log('Title: ' + argv.title)
+      }
+    })
+
+
+    yargs.parse()</pre>
+            </div>
+            <div class="">
+              <p>console</p>
+              <pre>node app.js add --title="Shopping list"
+                <span class="terminalComment"> // => Title: Shopping list</span>
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <h3 id="request"><a target="_blank" href="https://github.com/request/request#readme">Request</a></h3>
+          <p> <q cite="https://github.com/request/request#readme">Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.</q> </p>
+          <h4>How does it work?</h4>
+          <p>After installing and requiring <b>request</b>, we have access to the request() function. <br>
+          This function takes <u>2 parameters</u>: <br>
+          - An object containing a URL and some optional settings;<br>
+          - And a callback function that will be responsible for managing the received data.<br>
+          This callback will receive either an error or the response. If it receives one of them, the other will allways be undefined. <br>
+          To aviod breaking the app, the received answer must be checked like in the exemple bellow.
+        </p>
+          <div class="grid5050">
+            <div class="">
+              <p>forecast.js</p>
+              <pre>const request = require('request')
+
+
+const forecast = (latitude, longitude, callback) => {
+
+  const url = 'http://api.weatherstack.com/current?access_key= 99fdabd505c6d40d4086dc6308a70f7f&query=' + latitude + ',' + longitude
+
+  request({url, json: true}, (error, response) => {
+    if (error){
+      callback("unable to connect to weather services", undefined)
+    } else if (response.body.error) {
+      callback("Unable to find location", undefined)
+    } else {
+      callback(undefined, response.body.current.weather_descriptions[0] + '. Its currently ' + response.body.current.temperature + ' degrees out. It feels like ' + response.body.current.feelslike
+      )
+    }
+  })
+}
+
+module.exports = forecast;
+</pre>
+            <p>console</p>
+            <pre>
+            $node app.js London
+
+<span class="terminalComment">result -> </span>Light Rain. Its currently 12 degrees out. It feels like 10
+            </pre>
+            </div>
+            <div class="">
+              <p>app.js</p>
+              <pre>
+const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
+
+
+const arguments = process.argv
+
+if (process.argv.length === 3){
+
+  geocode(arguments[2], (error, {latitude, longitude, location} = {}) => {
+    if (error){
+      return console.log('Geocode Error', error)
+    }
+
+    forecast(latitude, longitude, (error, forecastData) => {
+        if (error){
+          return console.log('forecast error: ' + error)
+        }
+        console.log(location)
+        console.log(forecastData)
+    })
+  })
+} else {
+  console.log('Please provide a valid location');
+}
+
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="expressDiv">
+
+          <h3 id="express"><a target="_blank" href="http://expressjs.com/en/4x/api.html#app.engine">Express</a></h3>
+          <h4>What is express?</h4>
+          <p>Express makes it very easy to create a server so we can serve static files (html, css and js), get requests and serve up json data as a response.</p>
+          <p>"It’s a web framework that let’s you structure a web application to handle multiple different http requests at a specific url."</p>
+          <h4>Why use express?</h4>
+          <p>"Express helps you respond to requests with route support so that you may write responses to specific URLs. <br>
+            Supports multiple templating engines to simplify generating HTML."<small> Quotes came from </small><a href="https://medium.com/@LindaVivah/the-beginners-guide-understanding-node-js-express-js-fundamentals-e15493462be1"><b>here.</b></a></p>
+          <p>Express is used for <u>routing</u> and <u>middleware</u>. Given a domain like <b>http://me.com</b>, Express alows us to add and manage what we want to serve to the different routes, for example <b>http://me.com<span class="greenText">/home</span></b>, <b>http://me.com<span class="greenText">/help</span></b>, and so on. </p>
+          <p>"<b>Middleware functions</b> are functions that have access to the request object (req), the response object (res), and the <b>next()</b> function in the application’s request-response cycle.
+             The <b>next()</b> function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+            <br><br>
+            </p>
+
+          <div class="grid5050">
+
+            <div class="">
+                <p>Middleware functions can perform the following tasks:<br><br>
+
+                Execute any code.<br>
+                Make changes to the request and the response objects.<br>
+                End the request-response cycle.<br>
+                Call the next middleware in the stack."<small> Quotes came from </small><a href="http://expressjs.com/en/guide/writing-middleware.html"><b>here.</b></a></p>
+              <p>This example creates a server and presents a page to the address http://localhost:3000/. <br><br>
+                 Each <b>app.get</b> call is used to create a new route, with the route as the first parameter,
+                 and a callback where we have access to the <b>req</b>uest and <b>res</b>ponse as the second. </p>
+            </div>
+            <div class="">
+              <p><app.js/p>
+              <pre>const express = require('express')
+const app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+
+app.get('/about', function (req, res) {
+  res.send('Created by Daniel Sousa')
+})
+
+app.listen(3000)</pre>
+            </div>
+
+            <!-- row 2 -->
+
+            <div class="">
+              <p>When setting the routes, the <b>app.get</b> method allows us to set default routes for the non given routes, like the 404 error page, by using <span class="greenText">/*</span>. <br><br><br>
+                A route with this simbol will catch all routes whose previous path coincides. For example, '<b>/about/*</b>' will catch all routes that start with '<b>/about</b>'.
+              It is very important to set the routes in a correct order. <br><br>
+               If the first call to app.get sets the route '<b>/*</b>', none of the following routes would ever be reached. This route is usualy reserved for the 404 'Page not found!' message. </p>
+            </div>
+            <div class="">
+              <pre>
+
+app.get('/', function (req, res) {
+  ...
+})
+
+app.get('/about', function (req, res) {
+  ...
+})
+app.get('/about<span class="redText">/*</span>', function (req, res) {
+  ...
+})
+
+app.get('<span class="redText">/*</span>', function (req, res) {
+  ...
+})
+              </pre>
+            </div>
+          </div>
+          <div class="">
+              <h3>HTTP request methods with Express</h3>
+              <p>Express is used to respond to the HTTP request methods. In the previous example <span class="redText monospace-font">app.get()</span> but all the HTP methods can be managed with <b>Express</b>.</p>
+              <table>
+                  <thead> <th>Action</th>                           <th>HTTP Method</th> <th>Express</th>         <th>CRUD</th> </thead>
+                  <tbody>
+                     <tr> <td>Add data to the database</td>         <td>POST</td>   <td><span class="monospace-font">app.post('/route')</span></td>   <td>Create</td>  </tr>
+                     <tr> <td>Ask for data from the database</td>   <td>GET</td>    <td><span class="monospace-font">app.get('/route')</span></td>    <td>Read</td>  </tr>
+                     <tr> <td>Update data on the database</td>      <td>PATCH</td>  <td><span class="monospace-font">app.patch('/route')</span></td>  <td>Update</td>  </tr>
+                     <tr> <td>Remove data from the database</td>    <td>DELETE</td> <td><span class="monospace-font">app.delete('/route')</span></td> <td>Delete</td>  </tr>
+                  </tbody>
+              </table>
+          </div>
+          <h4>Other HTTP Methods:</h4>
+          <p>more on this <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">here!</a> </p>
+          <ul>
+              <li>HEAD</li>
+              <li>PUT</li>
+              <li>CONNECT</li>
+              <li>OPTIONS</li>
+              <li>TRACE</li>
+          </ul>
+          <p>The <b>Express</b> app method has about 20 methods we can use. In the previous example are <b>app.get()</b> and <b>app.listen()</b>. There's also <b>app.use()</b> for example to set the path to the public static files folder, <b>app.render()</b> to render views, etc.</p>
+
+          <h3>Express Middleware</h3>
+          <div class="">
+
+          </div>
+        </div>
+
+        <div class="">
+          <h3 id="path"><a target="_blank" href="https://nodejs.org/docs/latest/api/path.html#path_path_delimiter">Path</a></h3>
+          <p>The path module provides utilities for working with file and directory paths. It can be accessed using:</p>
+          <div class="grid5050">
+            <pre>npm intall path</pre>
+            <pre>const path = require('path');</pre>
+          </div>
+          <p>Some modules instead of the local path, require the machine absolute path. <br> The absolute path is accessible using '<b>__dirname</b>' witch returns a string with the current working directory. <br>
+             It is then often necessary to <i>stich</i> this path with filenames or other directory names.</p>
+          <div class="grid5050">
+          <p>This is where <b>'path'</b>  module comes in. It makes this and other tasks become easy.<br><br><br>
+          The __dirname returns the value <span style="word-wrap: break-word;">"/Users/danielsousa/Documents/.../NodeJsTut/myApp/src"</span>.<br><br>
+          The second parameter on the example '../public' goes up one level in the folders and assigns the 'public' folder.<br>
+        With out the <b>path</b> module, a lot of string work would have to be done to achieve the desired result.</p>
+
+          <pre> <span class="terminalComment">// Define paths for express config</span>
+const publicDirectoryPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '../templates/views')
+const partialsPath = path.join(__dirname, '../templates/partials')
+
+<span class="terminalComment">// Setup handlebars engine and views locations</span>
+app.set('view engine', 'hbs')
+app.set('views', viewsPath)
+hbs.registerPartials(partialsPath)
+
+<span class="terminalComment">// Setupt static directory to serve</span>
+app.use(express.static(publicDirectoryPath))
+</pre>
+          </div>
+        </div>
+
+        <div class="">
+          <h3 id="hbs"><a target="_blank" href="https://github.com/pillarjs/hbs#readme">HBS</a></h3>
+          <div class="grid5050">
+            <pre>npm intall hbs</pre>
+            <pre>const hbs = require('hbs');</pre>
+
+            <!-- row 2 -->
+            <p>
+              Handlebars is a Template Engine to render dinamic web pages. <br>
+              HBS is like a plugin that integrates Handlebars into Express.<br>
+              It also allows us to create markup we can reuse across pages.<br><br>
+              Handlebars looks for a 'views' folder on the root of the project. <br> The name and location of this folder have to be exact unless we configure HBS to look for in a different location or different name.<br>
+              The file type will be html but with a different name.<br>
+              The files have to end in .hbs, so index.hbs is the equivalent to index.html.
+            </p>
+            <pre><span class="terminalComment">Before using HBS we have to set the default view engine:</span>
+
+app.set('view engine', 'hbs')
+<span class="terminalComment">Now we can pass content to the html page:</span>
+app.get('', (req, res) => {
+  res.render('index', {
+    title: 'My Page',
+    subject: 'Its a page about music'
+  })
+})
+
+<span class="terminalComment">inside index.hbs file:</span>
+(&lt;!DOCTYPE html... etc)
+&lt;h1>This is {{title}}&lt;/h1>
+&lt;p>{{subject}}&lt;/p></pre>
+
+          <!-- row 3 -->
+
+          <p>To configure the views to a different location, in this case to a folder called templates:</p>
+          <pre>const viewsPath = path.join(__dirname, '../templates')
+app.set('views', viewsPath)
+</pre>
+
+          </div>
+          <div class="">
+            <h4>HBS Partials</h4>
+            <div class="grid5050">
+              <p>Partials is the name given to files with a reusable piece of html.<br>
+              For example, we can have the header of a page saved in a partial file and load that file in all the pages that share the same header, avoiding the trouble of editing several html pages each time we have to change something on the header.<br><br>
+            The partials file is also a .hbs file, with markup but not a complete page, it just contains the exact html content we want to use. </p>
+              <pre>const hbs = require('hbs')
+<span class="terminalComment">// to load partials we have to register the partials folder</span>
+const partialsPath = path.join(__dirname, '../templates/partials')
+
+hbs.registerPartials(partialsPath)
+
+<span class="terminalComment">//In the index.hbs file we cann add a partial like this:</span>
+&lt;!DOCTYPE html etc...
+{{>header}}
+              </pre>
+
+              <!-- row 2 -->
+
+              <p>The data that is passed to the index.hbs page is also accessible by the partials file loaded in.</p>
+
+              <pre>
+  app.get('', (req, res) => {
+    res.render('index', {
+      <span class="redText">title: 'My Page',
+      subject: 'Its a page about music'</span>
+      })
+  })
+            </pre>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="">
+          <h3 id="nodemon"><a href="https://github.com/remy/nodemon#nodemon">Nodemon</a></h3>
+          <p>Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development. Install it using npm.<br>
+            With nodemon we don't have to type <b>node app.js </b> each time we want to run our program, we use nodemon and each time we save a file, it restarts the server automaticaly.
+          </p>
+
+            <div class="grid5050">
+              <div class="">
+                <p>Installed globaly</p>
+                <pre>npm install -g nodemon</pre>
+                <p>Instead of</p>
+                <pre>node app.js</pre>
+                <p>Nodemon doesn't watch for files like .hbs, to make it monitor for changes in some types of files we have to call nodemon with some arguments.<br>
+                The flag <b>-e</b> means extensions and it is followed by a list of coma separated extensions to watch.</p>
+              </div>
+              <div class="">
+                <p>Installed as a development dependency</p>
+                <pre>npm install --save-dev nodemon</pre>
+                <p>type</p>
+                <pre>nodemon app.js</pre>
+                <pre>nodemon src/app.js -e js,hbs</pre>
+              </div>
+            </div>
+</p>
+        </div>
+
+        <!-- MONGO DB -->
+
+        <div class="">
+          <h3 id="mongo">Mongo DB</h3>
+          <p>Mongo is a NoSQL database.<br>
+            <b>NoSQL</b> stands for <b>Not Only SQL</b>.<br></p>
+            <div class="grid5050">
+              <!-- left -->
+              <div class="">
+                <h4>SQL</h4>
+                <p>SQL databases use <b>Tables</b> to save the data.</p>
+                <p>Tables are like excel documents.</p>
+                <img style="width: 100%;" src="images/SQL1.png" alt="">
+              </div>
+              <!-- right -->
+              <div class="">
+                <h4>NoSQL</h4>
+                <p>NoSQL databases use <b>Collections</b> to save the data.</p>
+                <p>Collections are like JSON objects.</p>
+                <img style="width: 100%;" src="images/NoSQL1.png" alt="">
+              </div>
+            </div>
+
+            <div class="validatorDiv">
+              <h3 id="validator"> <a target="_blank" href="https://www.npmjs.com/package/validator">Validator</a></h3>
+              <p>This Library is used for user data validation and sanitization.</p>
+            </div>
+
+
+
+        </div>
+
+
+
+        <!-- bcriptjs -->
+
+        <div class="">
+            <h3> <a href="https://www.npmjs.com/package/bcryptjs">bcritpjs</a></h3>
+            <p> <b>bcript </b> is a package used for hashing passwords. <br>
+            What is hashing and why not encripting? <br> <br>
+            Encription algorithms are reversible <br>
+            Hashing algorithms  are one way algorithms and NOT reversible. When a password is created it is hashed
+            and then saved to the server. When a login occurs, the submited password is once again hashed and compared
+             to the one stored in the database.<br>
+            With a hashed password, even if someone is able to crack it, they will never get access to the original password,
+            protecting the user that may have that same password in use for plenty other services.</p>
+
+            <div class="grid5050">
+                <div class="">
+                    <h4>Installing:</h4>
+                    <pre>npm install bcryptjs</pre>
+                </div>
+                <div class="">
+                    <h4>Example</h4>
+                    <pre>const bcript = require('bcryptjs')
+
+const myFunction = async () => {
+    const password = 'Red12345!'
+    const hashedPassword = await bcript.hash(password, 8)
+
+    console.log(password)
+    console.log(hashedPassword)
+
+    const isMatch = await bcript.compare('Red12345!', hashedPassword)
+    console.log(isMatch)
+}
+
+myFunction()</pre>
+
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+      <div class="right">
+
+      </div>
+    </main>
+    <footer>
+      <p>Made by Daniel Sousa</p>
+    </footer>
+  </body>
+</html>

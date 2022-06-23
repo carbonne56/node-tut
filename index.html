@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Tutorial</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./menu.css">
+  </head>
+  <body>
+    <header>
+      <img src="./images/node_logo_white.svg" width="130" alt="node js logo">
+      <div class="menu">
+        <ul>
+          <div id="menu-item-container"><li><a class="menu-link" href="index.html">START</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="index.html#nodeStart">Introduction</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#app-structure">Program Structure</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="libs.html">PACKAGES</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="libs.html#fs">FS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#chalk">Chalk</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#yargs">Yargs</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#path">Path</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#hbs">HBS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#nodemon">Nodemon</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="variedSubjects.html">VARIED SUBJECTS</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="variedSubjects.html#arrowFunctions">Arrow Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#callbacks">Callback Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#default">Default Parameters</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#fetch">Fetch API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#promisses">Promises API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#chaining">Promise Chaining</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#async">Async & Wait</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#debug">Debugging</a> </li>
+
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="mongo.html">MONGO DB</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="mongo.html#setupMMongo">Setup</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#crud">CRUD</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#mongoose">Mongoose</a> </li>
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="todo.html">TODO</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+
+
+    <main>
+
+
+      <div class="left">
+      </div>
+
+
+      <div class="center">
+        <h1 id="nodeStart">Node js Tutorial</h1>
+        <p style="text-align: center;">
+        In simple terms, <b>Node</b> is a JavaScript free and open source cross-platform for server-side programming that allows users to build network applications quickly.
+        </p>
+        <h2>First commands</h2>
+
+        <h3>Node inside the console</h3>
+        <p>To run a node commands from the terminal, all we have to do is give the command
+           '<b>node</b>' [Enter] to enter into the node mode.<br>
+           Now we can write and execute node code to the console. <br>
+            To exit this mode press '^C' twice or type '.exit'</p>
+
+        <h3>Load Node from a file</h3>
+        <p>Create a '.js' file with some node code in it and execute it from the console. <br>
+        '<b>node filename.js</b>' and the file gets executed. </p>
+
+        <h3>Accessing Node modules</h3>
+        <p>To access node modules we neeed to import them:</p>
+        <pre>const fs = require('fs');
+
+fs.writeFileSync('test.js', 'Testing accessing a node module that creates a new file in the locar directory.');
+        </pre>
+
+        <h3>Importing external files</h3>
+        <p>For the sake of modularity it is commun to have an app's code divided between several files. This short example shows how to achieve it.</p>
+        <div class="grid5050">
+          <div class="">
+            <p>app.js</p>
+            <pre>const name = require('./utils.js')
+
+console.log(name);
+            </pre>
+          </div>
+
+          <div class="">
+            <p>utils.js</p>
+            <pre>const name = 'Daniel'
+
+module.exports = name
+            </pre>
+          </div>
+        </div>
+
+        <h3>Command line arguments</h3>
+        <p>When running a node app we can pass arguments to the program via command line arguments:</p>
+        <pre>node app.js argument1 argument2 etc</pre>
+        <p>Those arguments are accessible to the app in a variable <b>'process.argv'</b>, witch is an array. <br>
+        The first 2 arguments are always provided:</p>
+        <ul>
+          <li>The first one is the path to the node js executable on our computer;</li>
+          <li>The second is the path to our program entry file.</li>
+          <li>Any remaining arguments are the ones provided by the 'user'</li>
+        </ul>
+        <div class="grid5050">
+          <div class="">
+            <p>app.js</p>
+            <pre>const arguments = process.argv;
+console.log(arguments)
+console.log(arguments[2])</pre>
+          </div>
+          <div class="">
+            <p>terminal</p>
+            <pre>node app.js Daniel
+<span class="terminalComment">// => [ '/usr/local/bin/node',
+  '/Users/danielsousa/(etc...)/example1/index.js',
+  'Daniel' ]
+  Daniel</span> </pre>
+          </div>
+        </div>
+
+
+        <div class="">
+          <h3>Query String</h3>
+          <p>The mean for server/client comunications is the <b>URL</b>. <br>
+          When a <u>client</u> wants to access some content, it addresses the server by calling it URL on the browser, for example:</p>
+          <h4 class="greenText">https://www.google.com/</h4>
+          <p>Every new <i>backslash</i> added, navigates into the servers preconfigured <b>routes</b>. (more about routing <a href="libs.html#express">here!</a>)</p>
+          <h4>https://www.google.com<span class="greenText">/script</span> </h4>
+          <h4>https://www.google.com<span  class="greenText">/script/start/</span> </h4>
+
+          <p>In order to pass data to the designated routes, a <b>query string</b> is added to the URL.</p>
+          <h4 class="greenText">https://www.google.com/<span class="greenText">' + query string'</span> </h4>
+          <p>The Query String will provide the server with one or more key value pairs. <br>
+            It allways starts with a <b class="greenText">?</b> question mark, followed by a key <b class="greenText">=</b> value</p>
+            <h4 class="">https://www.google.com/<span class="greenText">?name=Daniel</span> </h4>
+            <p>More key/values are separated by an <b class="greenText">&</b> ampersand</p>
+            <h4 class="">https://www.google.com/<span class="greenText">?name=Daniel&job=teacher</span> </h4>
+        </div>
+        <div class="">
+          <h3 id="request">Request</h3>
+          <p>Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.</p>
+          <div class="grid5050">
+            <pre>const request = require('request')
+
+const url =
+'http://anapi.com/info?access_key='+key'&query=' + someInfo
+
+request({url, json: true},(error, response) => {
+  if (error){
+    console.log("unable to connect")
+  } else if (response.body.error) {
+    console.log("Unable to find location")
+  } else {
+    console.log(response.body.someInfo)
+  }
+})
+</pre>
+            <div class="">
+              <img class="libImages" src="images/Request.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <h3 id="express">Express</h3>
+
+          <p>Express is a web framework that let's you structure a web application to handle multiple different http requests at a specific url. Express is a minimal, open source and flexible Node. js web app framework designed to make developing websites, web apps, & API's much easier.</p>
+
+          <div class="">
+            <img class="libImages" src="images/Express.png" alt="">
+          </div>
+
+          <div class="grid5050">
+            <div class="">
+              <p>client.js</p>
+              <pre>const weatherForm = document.querySelector('form')
+  const search = document.querySelector('input')
+
+  weatherForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const location = search.value
+
+  <span style="color: #34aeeb;">fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+      response.json().then((data) => {
+
+        if (data.error){
+          console.log(data.error)
+        }
+        else {
+          console.log(data)
+        }
+      })
+    })</span>
+  })</pre>
+            </div>
+            <div class="">
+              <p>nodeServer.js</p>
+              <pre>
+
+  app.get('/address', (req, res) => {
+
+    if (!req.query.address){
+
+      return res.send({
+        error: 'You must provide an address.'
+      })
+    }
+    console.log(req.query)
+    console.log(req.query.address)
+    <span style="color: #ff5500;">res.send(
+    {
+      getWeatherObj(req.query.address)
+    })</span>
+  })
+
+  <span class="terminalComment">// res.render would be used to render a view file with html</span>
+
+              </pre>
+            </div>
+
+          </div>
+          <p>More on <b>Express</b> <a href="libs.html#express">here!</a> </p>
+        </div>
+        <div class="">
+          <h3 id="app-structure">Weather-app structure</h3>
+          <div class="grid4060">
+            <p></p>
+            <div class="">
+              <img class="libImages" src="images/NodeCourse1.png" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="right">
+
+      </div>
+    </main>
+    <footer>
+      <p>Made by Daniel Sousa</p>
+    </footer>
+
+  </body>
+</html>

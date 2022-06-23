@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Tutorial</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./menu.css">
+  </head>
+  <body>
+    <header>
+      <img src="./images/node_logo_white.svg" width="130" alt="node js logo">
+      <div class="menu">
+        <ul>
+          <div id="menu-item-container"><li><a class="menu-link" href="index.html">START</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="index.html#nodeStart">Introduction</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#app-structure">Program Structure</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="libs.html">PACKAGES</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="libs.html#fs">FS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#chalk">Chalk</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#yargs">Yargs</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#path">Path</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#hbs">HBS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#nodemon">Nodemon</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="variedSubjects.html">VARIED SUBJECTS</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="variedSubjects.html#arrowFunctions">Arrow Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#callbacks">Callback Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#default">Default Parameters</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#fetch">Fetch API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#promisses">Promises API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#chaining">Promise Chaining</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#async">Async & Wait</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#debug">Debugging</a> </li>
+
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="mongo.html">MONGO DB</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="mongo.html#setupMMongo">Setup</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#crud">CRUD</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#mongoose">Mongoose</a> </li>
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="todo.html">TODO</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="left">
+
+      </div>
+      <div class="center">
+        <h1>Mongo DB</h1>
+        <h3>SQL vs NoSQL</h3>
+        <div class="grid5050">
+          <div class="">
+            <img class="libImages" src="images/SQL1.png" alt="">
+          </div>
+          <div class="">
+            <img class="libImages" src="images/NoSQL1.png" alt="">
+          </div>
+        </div>
+        <h3 id="setupMMongo">Setup Mongo</h3>
+        <div class="grid6040">
+          <!-- left div -->
+          <div class="">
+
+              <p>1 - <a href="https://www.mongodb.com/try/download/community">Download Mongo</a></p>
+              <p>2 - Extract and move extracted mongodb folder to <b>/Users/danielsousa</b> directory. (We can change the default name of the folder)</p>
+              <p>3 - In the same directory create a folder called mongodb-data
+
+              </p>
+              <p>4 - Mongo expects a data directory in the root folder of the computer. To change that location and folder name we have to tell Mongo where we want our databases folder and its name.<br>
+                In the terminal run the command:</p>
+                <pre>/Users/danielsousa/mongodb/bin/mongod --dbpath=/Users/danielsousa/mongodb-data</pre>
+                <p>This command initializes and adds some stuff to the <b> mongodb-data</b> folder <br>
+                With this command the database will start running and we must <u>NOT</u> disconnect. It has to be running when we install the drivers!</p>
+
+
+
+
+          </div>
+          <!-- right div -->
+          <div class="">
+            <img class="callbackImages" src="images/mongodb-folders.png" alt="">
+
+
+          </div>
+          <!-- left div -->
+          <div class="">
+            <p>5 -  <b>Lecture 77</b> - Download from <a target="_blank" href="https://robomongo.org/download">here</a> and install Mongo visualizer Robo 3T</p>
+            <p>6 - Launch Robo 3T and create a new connection (see image) --> </p>
+
+            <p>7 - Navigate to the project folder (and if it isn't initialized, <b>npm init</b> it) </p>
+            <p>8 - To install the drivers the database has to be running, remember?  <br>
+            In a <b><u>new terminal window</u></b> (without stoping the database process we kept running) enter:
+             </p>
+             <pre>npm install mongodb</pre>
+           <p> <a href="http://mongodb.github.io/node-mongodb-native/3.5/api/">Here</a> are the drivers documentation</p>
+          </div>
+          <!-- right div -->
+          <div class="">
+            <img class="libImages" src="images/mongo-Robo-T-config.png" alt="">
+          </div>
+        </div>
+
+        <div class="">
+          <h3 id="crud">CRUD</h3>
+          <h4>Connecting to Database</h4>
+          <pre>
+          const mongodb = require('mongodb')
+          const MongoClient = mongodb.MongoClient <span class="terminalComment">// To initialize the connection</span>
+
+          const connectionURL = 'mongodb://127.0.0.1:27017'
+          const databaseName = 'task-manager'
+
+          MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
+            if (error) {
+              return console.log('Unable to connect to database')
+            }
+
+            const db = client.db(databaseName)
+
+            <span class="redText">All the next remaining CRUD code is assumed to be inside this callback</span>
+
+
+          })
+          </pre>
+
+          <p>Create Read Update Delete</p>
+          <h4>Create</h4>
+          <pre>
+
+            db.collection('users').insertOne({
+              name: 'Daniel',
+              age: 45
+              <span class="terminalComment">// optional callback</span>
+            }, (error, result) => {
+              if (error){
+               return console.log('Unable to insert user')
+              }
+              console.log(result.ops)
+            })
+
+          </pre>
+
+          <h4>Read</h4>
+          <pre>
+
+          db.collection('users').findOne({ name: 'Jen'}, (error, user) => {
+              if (error){
+                return console.log('Unable to fetch')
+              }
+              console.log(user)
+            })
+          </pre>
+
+          <pre>
+          db.collection('users').find({age: 45}).toArray((error, users) => {
+              if (error){
+                return console.log('Unable to find users')
+              }
+              console.log(users)
+            })
+          </pre>
+
+          <pre>
+          db.collection('users').find({name: 'Daniel'}).count((error, value) => {
+              if (error){
+                return console.log('Unable to find count value')
+              }
+              console.log("Daniels: " + value)
+            })
+          </pre>
+          <h4>Update</h4>
+          <p>To update values, Mongo uses <a href="https://docs.mongodb.com/manual/reference/operator/update/">update operators</a>. These operators have their names preceded by a <b>$</b> dolar sign.</p>
+          <p>The update functions take 3 parameters:<br>
+          - An Object identifying the document; <br>
+          - The Field with the new value; <br>
+          - An optional callback. If the callback is not provided, updateOne <u>returns a promise</u>. </p>
+          <p>The next example doesn't provide a callback. Instead, it uses the returned promise.</p>
+          <pre>
+            db.collection('users').updateOne({
+              _id: new ObjectID("5f8de0588578fa31cf227de8")
+            }, {
+              <span class="redText">$set</span> : {
+                name: 'Jose'
+              }
+            })
+            .then((result) => {
+              console.log(result)
+            })
+            .catch((error) => {
+              console.log(error)
+            })
+                    })
+          </pre>
+          <h4>Delete</h4>
+          <pre>
+
+          db.collection('users').deleteMany({
+            age: 45
+          })
+          .then((result) => {
+            console.log(result)
+
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+          </pre>
+
+        </div>
+
+        <div class="">
+          <h3 id="mongoose">Mongoose</h3>
+          <p>Mongoose is classified as an ODM tool. ODM stands for Object Document Mapper or Object Data Modeling (ODM). Mongoose provides a rigorous modeling environment for your data, enforcing structure as needed while still maintaining the flexibility that makes MongoDB powerful. </p>
+
+          <h4>Connecting to Database</h4>
+          <pre>
+            const mongoose = require('mongoose')
+
+            mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api', {
+              useNewUrlParser: true,
+              useCreateIndex: true
+            })</pre>
+
+            <h4>Creating a Model</h4>
+            <pre>
+
+              const User = mongoose.model('User', {
+                name: {
+                  type: String
+                },
+                age: {
+                  type: Number
+                }
+              })
+            </pre>
+
+            <h4>Create</h4>
+            <pre>
+
+              const me = new User({
+                name: "Daniel Sousa",
+                age: 45
+              })
+
+              me.save().then((me) => {
+                console.log(me)
+              }).catch((error) => {
+                console.log("error: ", error)
+              })
+            </pre>
+
+            <h4>Data Validation and Sanitization</h4>
+            <p>Mongoose has some options and a method that allows us to validate the received data. In the next example we are setting the age field to be required and to only accept a positive number.<br>
+            Documentation about options <a target="_blank" href="https://mongoosejs.com/docs/api.html#SchemaTypeOptions"><b>here!</b></a> <br>
+            Documentation about types <a target="_blank" href="https://mongoosejs.com/docs/schematypes.html"><b>here!</b></a></p>
+            <p>To help with validation and sanitization, usually we use an NPM Library called <span class="greenText"><a target="_blank" href="https://www.npmjs.com/package/validator"><b>Validator</b></a></span>.</p>
+            <pre>
+              const User = mongoose.model('User', {
+    name: {
+      <span class="greenText">type: String,
+      required: true,
+      trim: true,
+      lowercase: true</span>
+    },
+    email: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+      validate(value){
+        if (<span class="redText">!validator.isEmail(value)</span> ){
+          throw new Error('Email is invalid')
+        }
+      }
+    },
+    age: {
+      <span class="greenText">type: Number,
+      default: 0,</span>
+      <span class="redText">validate(value){
+        if (value < 0 ){
+          throw new Error('Age must be a positive number')
+        }
+      }</span>
+    }
+  })</pre>
+        </div>
+
+      </div>
+      <div class="right">
+
+      </div>
+    </main>
+    <footer>
+      <p>Made by Daniel Sousa</p>
+    </footer>
+  </body>
+</html>

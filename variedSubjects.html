@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Tutorial</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./menu.css">
+  </head>
+  <body>
+    <header>
+      <img src="./images/node_logo_white.svg" width="130" alt="node js logo">
+      <div class="menu">
+        <ul>
+          <div id="menu-item-container"><li><a class="menu-link" href="index.html">START</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="index.html#nodeStart">Introduction</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="index.html#app-structure">Program Structure</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="libs.html">PACKAGES</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="libs.html#fs">FS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#chalk">Chalk</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#yargs">Yargs</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#request">Request</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#express">Express</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#path">Path</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#hbs">HBS</a> </li>
+                <li class="sub-menu-item"> <a href="libs.html#nodemon">Nodemon</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="variedSubjects.html">VARIED SUBJECTS</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="variedSubjects.html#arrowFunctions">Arrow Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#callbacks">Callback Functions</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#default">Default Parameters</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#fetch">Fetch API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#promisses">Promises API</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#chaining">Promise Chaining</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#async">Async & Wait</a> </li>
+                <li class="sub-menu-item"> <a href="variedSubjects.html#debug">Debugging</a> </li>
+
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="mongo.html">MONGO DB</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="mongo.html#setupMMongo">Setup</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#crud">CRUD</a> </li>
+                <li class="sub-menu-item"> <a href="mongo.html#mongoose">Mongoose</a> </li>
+              </ul>
+            </div>
+          </div>
+          <li>|</li>
+
+          <div id="menu-item-container"><li><a class="menu-link" href="todo.html">TODO</a></li>
+            <div id="button-container">
+              <ul class="sub-menu-container">
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+                <li class="sub-menu-item"> <a href="#">xcvxc</a> </li>
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="left">
+
+      </div>
+      <div class="center">
+        <h1 id="arrowFunctions">Arrow Functions</h1>
+        <p>ES6 has a new sintax for functions called <b><u>arrow functions</u></b>.</p>
+        Arrow functions have a simplified sintax when compared to normal functions and work <b><u>similarly</u></b> in most situations.
+        <div class="grid5050">
+          <div class="">
+            <p>normal function example</p>
+            <pre>const myFunction = function(name){
+      return 'My name is ' + name
+}
+console.log(myFunction('Daniel'))
+<span class="terminalComment">// -> My name is Daniel</span> </pre>
+          </div>
+          <div class="">
+            <p>arrow function equivalent</p>
+            <pre>const myFunction (name) => {
+      return 'My name is ' + name
+}
+console.log(myFunction('Daniel'))
+<span class="terminalComment">// -> My name is Daniel</span> </pre>
+          </div>
+
+          <!-- row 2 -->
+
+          <p>Arrow functions can have a shorthand syntax. When the body of the function only has one line, the <b>return</b> word and the <u>curly braces</u> can be removed.</p>
+          <pre>const myFunction (name) => 'My name is ' + name
+
+console.log(myFunction('Daniel'))
+<span class="terminalComment">// -> My name is Daniel</span> </pre>
+        </div>
+        <h2 style="text-align: center;">Situations where we can <span style="color: var(--main-red)">NOT</span> use arrow functions</h2>
+        <div class="grid5050">
+          <div class="">
+            <pre>const event = {
+              name: 'Birthday Party',
+              guestlist: [],
+              printGuestList: function(){
+                console.log('Guest list for ' + this.name)
+              }
+            }
+            <span class="terminalComment">// -> Guest list for Birthday Party </span>
+          </pre>
+          </div>
+          <div class="">
+            <pre>const event = {
+                name: 'Birthday Party',
+                guestlist: [],
+                printGuestList: () => {
+                console.log('Guest list for ' + this.name)
+                }
+              }
+              <span class="terminalComment">// -> Guest list for <span style="color: var(--main-red)">undefined</span> </span>
+            </pre>
+          </div>
+        </div>
+        <h2 style="text-align: center;">Alternative <span style="color: var(--main-red)">ES6</span> syntax</h2>
+        <pre>const event = {
+            name: 'Birthday Party',
+            guestlist: [],
+            <span style="color: var(--main-red)">printGuestList() {</span>
+            console.log('Guest list for ' + this.name)
+            }
+          }
+          <span class="terminalComment">// -> Guest list for Birthday Party </span>
+        </pre>
+        <h2 style="text-align: center;">Situation where <span style="color: var(--main-red)">arrow functions</span> work better</h2>
+        <div class="grid5050">
+          <div class="">
+            <p>When using a normal function in this situation, it will bind its own 'this' value and will not be able to access the event.name value.</p>
+            <pre>const event = {
+  name: 'Birthday Party',
+  guestlist: ['José', 'Maria', 'Manel'],
+  <span style="color: var(--main-red)">printGuestList() {</span>
+    this.guestlist.forEach(function (guest){
+console.log(guest +' is attending '+ this.name)
+    })
+  }
+}
+<span class="terminalComment">// -> José is attending undefined
+// -> Maria is attending undefined
+// -> Manel is attending undefined </span>
+            </pre>
+          </div>
+          <div class="">
+            <p>Arrow functions solve this problem because they do not bind a their own 'this' value.<br><br> </p>
+            <pre>const event = {
+  name: 'Birthday Party',
+  guestlist: ['José', 'Maria', 'Manel'],
+  <span style="color: var(--main-red)">printGuestList() {</span>
+    this.guestlist.forEach((guest) => {
+console.log(guest +' is attending '+ this.name)
+    })
+  }
+}
+<span class="terminalComment">// -> José is attending Birthday Party
+// -> Maria is attending Birthday Party
+// -> Manel is attending Birthday Party </span>
+            </pre>
+          </div>
+        </div>
+
+        <div class="callbacksDiv topSeparator">
+          <h1 id='callbacks'>Callback Functions</h1>
+
+          <div class="grid5050">
+
+            <!-- row 1 -->
+            <div class="">
+              <h4>How does Node process asynchronous code?</h4>
+              <p>Javascript is <u>single-threaded</u> but Node has the capability to process <b>asynchronously</b>. This happens because besides the javascript call stack, Node adds 3 more layers:</p>
+              <ul>
+                <li>The Node APIs layer</li>
+                <li>The Call Back Queue</li>
+                <li>The Event Loop</li>
+              </ul>
+
+            </div>
+            <div class="">
+              <img class="callbackImages" src="images/callbacks/callbacksCode.png" alt="">
+            </div>
+            <!-- row 2 -->
+            <div class="">
+              <p>Node is built in <b>C++</b> so every Node program is <b>Javascript</b> wrapped in a <b>C++</b> Main function.<br>
+              The Main function is allways the first in the call stack, only then the rest of our code begins to enter the call stack. </p>
+              <p>This call to console.log concludes and then exits the stack.</p>
+            </div>
+            <div class="">
+              <img class="callbackImages" src="images/callbacks/callbacks1.png" alt="">
+            </div>
+            <!-- row 3 -->
+            <div class="">
+              <p>When a C++ method is called it is stacked but since it has an asynchronous callback it is processed in the C++ API stack exiting the normal stack and thus leaving the program free to carry on to the next call.</p>
+            </div>
+            <div class="">
+              <img class="callbackImages" src="images/callbacks/callbacks2.png" alt="">
+            </div>
+            <!-- row 4 -->
+            <div class="">
+              <p>The next call is stacked and processed. In this case it's another C++ method. It also is carryed to the C++ API stack.</p>
+            </div>
+            <div class="">
+              <img class="callbackImages" src="images/callbacks/callbacks3.png" alt="">
+            </div>
+            <!-- row 5 -->
+            <div class="">
+              <p>Node then processes all the code until the program is complete before processing the asynchronous parts.</p>
+              <p>The asynchronous parts of the program are waiting for an answer or a completion. When they get the answer they move to the <b>Callback Queue</b>.</p>
+            </div>
+            <div class="">
+              <img class="callbackImages" src="images/callbacks/callbacks4.png" alt="">
+            </div>
+            <!-- row 6 -->
+            <div class="">
+
+              <p>Then the event loop checks if all the non asynchronous code has been processed and only then it starts to process the methods in the Callback Queue.</p>
+            </div>
+            <div class="">
+              <img class="callbackImages" src="images/callbacks/callbacks6.png" alt="">
+            </div>
+            <!-- row 7 -->
+            <div class="">
+              <p>When all the code and the Main function are finished, the callback queue gets processed.</p>
+            </div>
+            <div class="">
+              <img class="callbackImages" src="images/callbacks/callbacks8.png" alt="">
+            </div>
+
+
+          </div>
+
+          <div class="grid3070">
+            <!-- row 8 -->
+            <div class="">
+              <p>Only then it processes the remaining asynchronous code until everything gets concluded,</p>
+              <p>and the program terminates.</p>
+            </div>
+            <div class="">
+              <img style="width: 100%" src="images/callbacks/callbacks9.png" alt="">
+            </div>
+          </div>
+
+        </div>
+        <div class="defaultParametersDiv topSeparator">
+          <h1 id="default">Default Parameters</h1>
+
+        </div>
+        <div class="fetchApiDiv topSeparator">
+          <h1 id="fetch">Fetch API</h1>
+
+        </div>
+        <div class="promissesApiDiv topSeparator">
+          <h1 id="promisses">Promisses API</h1>
+          <h4 style="text-align: center;">Great explanation and simple examples can be found in the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">MDN WebDocs</a></h4>
+          <h3>Promisses</h3>
+          <p>Promises are an alternative to callbacks when managing asynchronous responses.<br>
+             In callbacks we have to manage the successful or unsuccessful result with if statements,
+              the promise offers 2 functions in case of success (resolve) or failure (reject). </p>
+              <p>In a promisse, we don't call the function itself, we call methods on the function.<br>
+              The <span class="redText">then(result)</span> method will run the successful <span class="greenText">resolve()</span> code, and the <span class="redText">catch(e)</span> will run the <span class="greenText">reject()</span>. </p>
+          <div class="grid5050">
+            <div class="">
+              <p>callback version</p>
+              <pre>const doWorkCallback = (callback) => {
+  setTimeout(() => {
+    //callback('This is my error', undefined)
+    callback(undefined, [1, 4, 7])
+  }, 2000)
+}
+
+doWorkCallback((error, result) => {
+  if (error) {
+    return console.log(error)
+  }
+  console.log(result)
+})
+</pre>
+            </div>
+
+            <div class="">
+              <p>promise version</p>
+              <pre>
+const doWorkPromise = new Promise((resolve, reject) =>{
+  setTimeout(() => {
+    <span class="terminalComment">//resolve([7, 4, 1])</span>
+    reject('Things went wrong')
+  }, 2000)
+})
+
+doWorkPromise.then((result) => {
+  console.log('Success!', result)
+}).catch((error) => {
+  console.log('Error!', error);
+})
+
+</pre>
+            </div>
+          </div>
+          <div class="promiseChainingDiv">
+            <h3 id="chaining">Promise Chaining</h3>
+            <p>One of the great advantages of promisses is that they can be chained. Chaining promisses prevents nesting callbacks. <br>
+               In the example below there is only one level of nesting and still, the chained version is mutch simpler to read. <br>
+                If we would go 3 or 4 levels deeper, the nested version would be very dificult to untangle while the chained version would remain very clear.</p>
+               <p>The chained promisses are allways called in the order they are presented.</p>
+               <p>Only one catch() call is needed at the end no matter how many calls to then() exist.</p>
+            <div class="grid5050">
+              <div class="">
+                <p>Nested version</p>
+                <pre>const add = (a, b) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(a + b)
+    }, 2000)
+  })
+}
+
+add(1, 2).then((sum) => {
+  console.log(sum)
+
+  add(sum, 5).then((sum2) => {
+    console.log(sum2)
+
+  }).catch((e) => {
+    console.log(e)
+  })
+
+}).catch((e) => {
+  console.log(e)
+})
+</pre>
+              </div>
+              <div class="">
+                <p>Chained Version</p>
+                <pre>const add = (a, b) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(a + b)
+    }, 2000)
+  })
+}
+
+add(1, 2).then((sum) => {
+  console.log(sum)
+  return <span class="redText">add(sum, 5)</span>
+
+}).then((sum2) => {
+  console.log(sum2)
+
+}).catch((e) => {
+  console.log(e)
+})
+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="asyncAndWaitDiv topSeparator">
+            <h1 id="async">async & await</h1>
+            <div class="grid5050">
+                <div class="">
+                    <p>Promises</p>
+                    <pre>const add = (a, b) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (typeof a !== 'number' || typeof b !== 'number'){
+        reject("One or more arguments are not numbers")
+      }
+      resolve(a + b)
+    }, 2000)
+  })
+}
+
+add(1, 7).then((sum) => {
+  console.log(sum)
+  return add(sum, 5)
+}).then((sum2) => {
+  console.log(sum2)
+  return add(sum2, 5)
+}).then((sum3) => {
+  console.log(sum3)
+})
+.catch((e) => {
+  console.log(e)
+})
+</pre>
+                </div>
+                <div class="">
+                    <p>async & await</p>
+                    <pre>const add = (a, b) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (a < 0 || b < 0){
+        return reject('Numbers must be non negative')
+      }
+      resolve(a + b)
+    }, 2000)
+  })
+}
+
+const doWork = async () => {
+  const sum = await add(1, 99)
+  const sum2 = await add(sum, 50)
+  const sum3 = await add(sum2, -3)
+  return sum3
+}
+
+doWork().then((result) => {
+  console.log('result', result)
+}).catch((e) => {
+  console.log('e', e)
+})
+</pre>
+                </div>
+            </div>
+            <div class="grid5050">
+                <div class="">
+                    <pre>
+app.get('/tasks', (req, res) => {
+
+   Task.find({}).then((tasks) => {
+       res.send(tasks)
+   }).catch((e) => {
+       res.status(500).send()
+   })
+})</pre>
+                </div>
+                <div class="">
+                    <pre>
+app.get('/tasks', async (req, res) => {
+
+    try {
+        const tasks = await Task.find({})
+        res.send(tasks)
+    } catch (e) {
+        res.status(500).send()
+    }
+})</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="debugDiv topSeparator">
+          <h1 id="debug">Node Debugger</h1>
+          <h5>Section 5 - Lectures 24, 25 and 26</h5>
+          <div class="">
+            <div class="">
+              <p>terminal</p>
+              <pre>node <span class="redText">inspect</span> app.js add --title="shopping list" --body="Fruit, Other groceries"</pre>
+            </div>
+            <div class="">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+
+      </div>
+    </main>
+    <footer>
+      <p>Made by Daniel Sousa</p>
+    </footer>
+  </body>
+</html>
